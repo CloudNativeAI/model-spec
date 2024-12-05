@@ -22,10 +22,18 @@ const (
 )
 
 const (
-	// ArtifactTypeModelLayer is the media type used for layers referenced by the manifest.
-	ArtifactTypeModelLayer = "application/vnd.cnai.model.layer.v1.tar"
+	// MediaTypeModelLayer is the media type used for layers referenced by the manifest.
+	MediaTypeModelLayer = "application/vnd.cnai.model.layer.v1.tar"
 
-	// ArtifactTypeModelLayerGzip is the media type used for gzipped layers
+	// MediaTypeModelLayerGzip is the media type used for gzipped layers
 	// referenced by the manifest.
-	ArtifactTypeModelLayerGzip = "application/vnd.cnai.model.layer.v1.tar+gzip"
+	MediaTypeModelLayerGzip = "application/vnd.cnai.model.layer.v1.tar+gzip"
+
+	// MediaTypeModelDoc is the media type used for documentation referenced by the manifest,
+	// such as README.md, LICENSE, etc.
+	MediaTypeModelDoc = "application/vnd.cnai.model.doc.v1.tar"
+
+	// MediaTypeModelConfig is the media type used for configuration referenced by the manifest,
+	// such as config.json, tokenizer.json, generation_config.json, etc.
+	MediaTypeModelConfig = "application/vnd.cnai.model.config.v1.tar"
 )
