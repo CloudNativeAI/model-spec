@@ -22,7 +22,8 @@ const (
 )
 
 const (
-	// MediaTypeModelLayer is the media type used for layers referenced by the manifest.
+	// MediaTypeModelLayer is the media type used for layers referenced by the manifest, it's recommended to use
+	// the `application/vnd.oci.image.layer.v1.tar` format for the model layer to avoid compression.
 	MediaTypeModelLayer = "application/vnd.cnai.model.layer.v1.tar"
 
 	// MediaTypeModelLayerGzip is the media type used for gzipped layers

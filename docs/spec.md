@@ -26,7 +26,7 @@ The model specification running workflow is divided into two stages: `BUILD & PU
 
 ### BUILD & PUSH
 
-Use tools(ORAS, Ollama, etc.) to build required resources in the model repository into artifact based on the model specification. Note that the model layer MUST NOT be compressed, because the files of model weight has been compressed. If the model layer is compressed, the container runtime will cost long time to decompress the model layer. Therefore, it's recommended to use the `application/vnd.oci.image.layer.v1.tar` format for the model layer to avoid compression
+Use tools(ORAS, Ollama, etc.) to build required resources in the model repository into artifact based on the model specification. Note that the model layer MUST NOT be compressed, because the files of model weight has been compressed. If the model layer is compressed, the container runtime will cost long time to decompress the model layer. Therefore, it's recommended to use the `application/vnd.oci.image.layer.v1.tar` format for the model layer to avoid compression.
 
 Next push the artifact to the OCI registry(Harbor, Docker Hub, etc.), and use the functionalities of the OCI registry to manage the model artifact.
 
