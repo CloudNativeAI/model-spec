@@ -67,6 +67,10 @@ The following terms are used in this section:
 
     A list of licenses under which the model is distributed, represented as [SPDX License Expressions][spdx-license-expression].
 
+  - **capabilities** _array of string_, OPTIONAL
+
+    A list of special capabilities that the model supports, such as "reasoning", "multimodal".
+
 - **config** _object_, REQUIRED
 
   Contains the technical metadata for the model.
@@ -128,7 +132,11 @@ Here is an example model artifact configuration JSON document:
     "format": "pytorch",
     "paramSize": "8b",
     "precision": "fp16",
-    "quantization": "gptq"
+    "quantization": "gptq",
+    "capabilities": [
+      "reasoning",
+      "multimodal"
+    ]
   },
   "modelfs": {
     "type": "layers",

@@ -87,6 +87,9 @@ type ModelDescriptor struct {
 
 	// The human-readable description of the software packaged in the model
 	Description string `json:"description,omitempty"`
+
+	// Special capabilities that the model supports, such as "reasoning", "multimodal".
+	Capabilities []string `json:"capabilities,omitempty"`
 }
 
 // Model defines the basic information of a model.
