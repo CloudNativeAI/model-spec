@@ -67,6 +67,10 @@ The following terms are used in this section:
 
     A list of licenses under which the model is distributed, represented as [SPDX License Expressions][spdx-license-expression].
 
+  - **capabilities** _array of string_, OPTIONAL
+
+    A list of special capabilities that the model supports, such as "reasoning", "multimodal".
+
 - **config** _object_, REQUIRED
 
   Contains the technical metadata for the model.
@@ -111,7 +115,9 @@ Here is an example model artifact configuration JSON document:
 {
   "descriptor": {
     "createdAt": "2025-01-01T00:00:00Z",
-    "authors": ["xyz@xyz.com"],
+    "authors": [
+      "xyz@xyz.com"
+    ],
     "vendor": "XYZ Corp.",
     "family": "xyz3",
     "name": "xyz-3-8B-Instruct",
@@ -121,14 +127,20 @@ Here is an example model artifact configuration JSON document:
     "docURL": "https://www.xyz.com/get-started/",
     "sourceURL": "https://github.com/xyz/xyz3",
     "revision": "1234567890",
-    "licenses": ["Apache-2.0"]
+    "licenses": [
+      "Apache-2.0"
+    ]
   },
   "config": {
     "architecture": "transformer",
     "format": "pytorch",
     "paramSize": "8b",
     "precision": "fp16",
-    "quantization": "gptq"
+    "quantization": "gptq",
+    "capabilities": [
+      "reasoning",
+      "multimodal"
+    ]
   },
   "modelfs": {
     "type": "layers",
