@@ -115,7 +115,9 @@ Here is an example model artifact configuration JSON document:
 {
   "descriptor": {
     "createdAt": "2025-01-01T00:00:00Z",
-    "authors": ["xyz@xyz.com"],
+    "authors": [
+      "xyz@xyz.com"
+    ],
     "vendor": "XYZ Corp.",
     "family": "xyz3",
     "name": "xyz-3-8B-Instruct",
@@ -125,7 +127,9 @@ Here is an example model artifact configuration JSON document:
     "docURL": "https://www.xyz.com/get-started/",
     "sourceURL": "https://github.com/xyz/xyz3",
     "revision": "1234567890",
-    "licenses": ["Apache-2.0"]
+    "licenses": [
+      "Apache-2.0"
+    ]
   },
   "config": {
     "architecture": "transformer",
