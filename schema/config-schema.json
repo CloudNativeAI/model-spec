@@ -40,7 +40,7 @@
             "type": "string"
           },
           "capabilities": {
-            "type": "object"
+            "$ref": "#/$defs/ModelCapabilities"
           }
         },
         "additionalProperties": false
@@ -115,6 +115,27 @@
           "type",
           "diff_ids"
         ]
+      },
+      "ModelCapabilities": {
+        "type": "object",
+        "properties": {
+          "input_types": {
+            "type": "array",
+            "items": {
+               "$ref": "#/$defs/Modality"
+            }
+          },
+          "output_types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Modality"
+            }
+          }
+        }
+      },
+      "Modality": {
+        "type": "string",
+        "enum": ["text", "image", "audio", "video", "embedding", "other"]
       }
-    }
   }
+}
