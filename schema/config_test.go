@@ -304,9 +304,9 @@ func TestConfig(t *testing.T) {
 `,
 			fail: true,
 		},
-    // expected failure: input_types is not an array
-    {
-      config: `
+		// expected failure: input_types is not an array
+		{
+			config: `
 {
   "descriptor": {
     "name": "xyz-3-8B-Instruct",
@@ -328,9 +328,9 @@ func TestConfig(t *testing.T) {
 `,
 			fail: true,
 		},
-    // expected failure: output_types is not an array
-    {
-      config: `
+		// expected failure: output_types is not an array
+		{
+			config: `
 {
   "descriptor": {
     "name": "xyz-3-8B-Instruct",
@@ -352,9 +352,9 @@ func TestConfig(t *testing.T) {
 `,
 			fail: true,
 		},
-    // expected failure: the element of input_types/output_types is not a valid type
-    {
-      config: `
+		// expected failure: the element of input_types/output_types is not a valid type
+		{
+			config: `
 {
   "descriptor": {
     "name": "xyz-3-8B-Instruct",
@@ -364,6 +364,84 @@ func TestConfig(t *testing.T) {
      "paramSize": "8b",
      "capabilities": {
         "input_types": ["img"]
+     }
+  },
+  "modelfs": {
+    "type": "layers",
+    "diff_ids": [
+       "sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    ]
+  }
+}
+`,
+			fail: true,
+		},
+		// expected failure: knowledge_cutoff is not RFC3339 format
+		{
+			config: `
+{
+  "descriptor": {
+    "name": "xyz-3-8B-Instruct",
+    "version": "3.1"
+  },
+  "config": {
+     "paramSize": "8b",
+     "capabilities": {
+        "input_types": ["text"],
+        "output_types": ["text"],
+        "knowledge_cutoff": "2025-01-01"
+     }
+  },
+  "modelfs": {
+    "type": "layers",
+    "diff_ids": [
+       "sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    ]
+  }
+}
+`,
+			fail: true,
+		},
+		// expected failure: reasoning is not boolean
+		{
+			config: `
+{
+  "descriptor": {
+    "name": "xyz-3-8B-Instruct",
+    "version": "3.1"
+  },
+  "config": {
+     "paramSize": "8b",
+     "capabilities": {
+        "input_types": ["text"],
+        "output_types": ["text"],
+        "reasoning": "true"
+     }
+  },
+  "modelfs": {
+    "type": "layers",
+    "diff_ids": [
+       "sha256:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+    ]
+  }
+}
+`,
+			fail: true,
+		},
+		// expected failure: tool_usage is not boolean
+		{
+			config: `
+{
+  "descriptor": {
+    "name": "xyz-3-8B-Instruct",
+    "version": "3.1"
+  },
+  "config": {
+     "paramSize": "8b",
+     "capabilities": {
+        "input_types": ["text"],
+        "output_types": ["text"],
+        "tool_usage": "true"
      }
   },
   "modelfs": {

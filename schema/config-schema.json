@@ -130,6 +130,16 @@
             "items": {
               "$ref": "#/$defs/Modality"
             }
+          },
+          "knowledge_cutoff": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reasoning": {
+            "type": "boolean"
+          },
+          "tool_usage": {
+            "type": "boolean"
           }
         }
       },
