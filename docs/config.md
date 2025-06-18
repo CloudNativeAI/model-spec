@@ -77,7 +77,7 @@ The following terms are used in this section:
 
   - **format** _string_, OPTIONAL
 
-    The format for the model, such as "onnx", "tensorflow", or "pytorch".
+    The format for the model, such as "onnx", "safetensors", or "pt".
 
   - **paramSize** _string_, OPTIONAL
 
@@ -121,7 +121,7 @@ The following terms are used in this section:
     | `"uint64"` | 64-bit unsigned integer |
     | `"bool"` | Boolean |
 
-    If multiple precisions are used, they should be separated by commas. For example, if the model uses float16 and float8_e4m3fn, the precision should be set to `"float16,float8_e4m3"`.
+    If multiple precisions are used, they should be separated by commas. For example, if the model uses float16 and float8_e4m3, the precision should be set to `"float16,float8_e4m3"`.
 
   - **quantization** _string_, OPTIONAL
 
