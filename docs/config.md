@@ -77,7 +77,7 @@ The following terms are used in this section:
 
   - **format** _string_, OPTIONAL
 
-    The format for the model, such as "onnx", "tensorflow", or "pytorch".
+    The format for the model, such as "onnx", "safetensors", or "pt".
 
   - **paramSize** _string_, OPTIONAL
 
