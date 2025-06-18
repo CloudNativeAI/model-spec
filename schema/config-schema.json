@@ -38,6 +38,9 @@
           },
           "quantization": {
             "type": "string"
+          },
+          "capabilities": {
+            "$ref": "#/$defs/ModelCapabilities"
           }
         },
         "additionalProperties": false
@@ -112,6 +115,37 @@
           "type",
           "diff_ids"
         ]
+      },
+      "ModelCapabilities": {
+        "type": "object",
+        "properties": {
+          "input_types": {
+            "type": "array",
+            "items": {
+               "$ref": "#/$defs/Modality"
+            }
+          },
+          "output_types": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/Modality"
+            }
+          },
+          "knowledge_cutoff": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "reasoning": {
+            "type": "boolean"
+          },
+          "tool_usage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Modality": {
+        "type": "string",
+        "enum": ["text", "image", "audio", "video", "embedding", "other"]
       }
-    }
   }
+}
